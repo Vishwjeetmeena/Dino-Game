@@ -183,6 +183,7 @@ function gameLoop(currentTime) {
 
   if (gameOver) {
     showGameOver();
+    window.reload();
   }
 
   if (waitingToStart) {
