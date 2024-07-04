@@ -1,0 +1,25 @@
+* {
+    padding: 0px;
+    margin: 0px;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  canvas {
+    border-bottom: 0.1px solid grey;
+  }
+  a {
+    color: rgb(161, 157, 157);
+  }
+  .links {
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 1.2em;
+  }
+  .separator {
+    color: grey;
+  }
