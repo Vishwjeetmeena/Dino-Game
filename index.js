@@ -130,7 +130,6 @@ function reset() {
   hasAddedEventListenersForRestart = false;
   gameOver = false;
   waitingToStart = false;
-  ground.reset();
   cactiController.reset();
   score.reset();
   gameSpeed = GAME_SPEED_START;
@@ -183,7 +182,6 @@ function gameLoop(currentTime) {
 
   if (gameOver) {
     showGameOver();
-    window.reload();
   }
 
   if (waitingToStart) {
