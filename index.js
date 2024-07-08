@@ -15,9 +15,7 @@ const PLAYER_HEIGHT = 62
 const MAX_JUMP_HEIGHT = GAME_HEIGHT;
 const MIN_JUMP_HEIGHT = 150;
 
-const GROUND_WIDTH = 2400;
-const GROUND_HEIGHT = 24;
-const GROUND_AND_CACTUS_SPEED = 0.5;
+const CACTUS_SPEED = 0.5;
 
 const CACTI_CONFIG = [
   { width: 32, height: 66, image: "images/cactus_1.png" },
@@ -27,7 +25,6 @@ const CACTI_CONFIG = [
 
 //Game Objects
 let player = null;
-let ground = null;
 let cactiController = null;
 let score = null;
 
@@ -67,7 +64,7 @@ function createSprites() {
     ctx,
     cactiImages,
     scaleRatio,
-    GROUND_AND_CACTUS_SPEED
+    CACTUS_SPEED
   );
 
   score = new Score(ctx, scaleRatio);
@@ -81,13 +78,6 @@ function setScreen() {
 }
 
 setScreen();
-//Use setTimeout on Safari mobile rotation otherwise works fine on desktop
-window.addEventListener("resize", () => setTimeout(setScreen, 500));
-
-if (screen.orientation) {
-  screen.orientation.addEventListener("change", setScreen);
-}
-
 function getScaleRatio() {
   const screenHeight = Math.min(
     window.innerHeight,
